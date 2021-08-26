@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='app'>
+    <head>
+        <title>Angular JS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+        <script src="angular.js"></script>
+        <style type="text/css">
+            li{
+                list-style: none;
+            }
+            .done-true{
+                text-decoration: line-through;
+                color: grey;
+            }
+            img{
+                height: 300px;
+            }
+        </style>
+    </head>
+    <body ng-controller="ctrl">
+        <h2>{{todosRemaining()}} of {{totalTodos()}} remaining</h2>
+        <a href='#' ng-click="archive()">[Archive]</a>
+        <ul>
+            <li ng-repeat="todo in todos">
+                <input type="checkbox" name="" value="" ng-model="todo.done">
+                <span class="done-{{todo.done}}">{{todo.text}}</span>
+            </li>
+        </ul>
+        <form ng-submit="addTodo()">
+            <input type="text" name="" value="" ng-model="text" ng-model-in>
+        <input type="submit" name="" value="Add">
+        </form>
+
+    </body>
+</html>
